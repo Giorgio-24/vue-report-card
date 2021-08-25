@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 
 <head>
     <meta charset="UTF-8">
@@ -14,8 +14,37 @@
 
 <body>
     <div id="root">
-
+        <div>
+            <h1 class="mb-3">Students</h1>
+        </div>
+        <table class="table table-striped">
+            <thead>
+                <tr class="text-center">
+                    <th role="col">#</th>
+                    <th>Nome</th>
+                    <th>Cognome</th>
+                    <th>Matricola</th>
+                    <th>Italiano</th>
+                    <th>Matematica</th>
+                    <th>Inglese</th>
+                    <th>Informatica</th>
+                    <th>Media Tot.</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="text-center" v-for="(student, index) in students"
+                    :class="{'table-danger' : hasBeenRejected(student.voti)}">
+                    <th role="col" class="">{{ index + 1 }}</th>
+                    <td>{{ student.nome }}</td>
+                    <td>{{ student.cognome }}</td>
+                    <td>#{{ student.matricola }}</td>
+                    <td v-for="materia in student.voti">{{ getAverage(materia) }}</td>
+                    <td>{{ getTotalAverage(student.voti) }}</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
+    <script src="./data.js"></script>
     <script src="./script.js"></script>
 </body>
 

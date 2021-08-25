@@ -85,13 +85,13 @@ const getRandomLastName = () => {
 const getRandomVotes = () => {
   const votes = [];
   for (let i = 0; i < 3; i++) {
-    votes.push(getRandomNumber(3, 10));
+    votes.push(getRandomNumber(2, 10));
   }
   return votes;
 };
 
 const students = [];
-for (let i = 0; i < 10; i++) {
+for (let i = 0; i < 27; i++) {
   const studente = {
     nome: getRandomFirstName(),
     cognome: getRandomLastName(),
