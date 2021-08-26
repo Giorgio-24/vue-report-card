@@ -24,10 +24,7 @@
                     <th>Nome</th>
                     <th>Cognome</th>
                     <th>Matricola</th>
-                    <th>Italiano</th>
-                    <th>Matematica</th>
-                    <th>Inglese</th>
-                    <th>Informatica</th>
+                    <th class="text-capitalize" v-for="(interrogazioni, materia) in students[0].voti">{{ materia }}</th>
                     <th>Media Tot.</th>
                 </tr>
             </thead>
